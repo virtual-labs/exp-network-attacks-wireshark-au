@@ -1,0 +1,56 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the primary purpose of using Wireshark?",
+      "answers": {
+        "a": "To edit network protocols",
+        "b": "To capture and analyze network traffic",
+        "c": "To block malware on a system",
+        "d": "To encrypt network data"
+      },
+      "explanations": {
+        "a": "Wireshark is not used for editing network protocols.",
+        "b": "Correct. Wireshark is a tool used to capture and analyze network traffic for various purposes such as troubleshooting, security auditing, and forensic analysis.",
+        "c": "Wireshark is used for analysis, not blocking malware.",
+        "d": "Wireshark does not encrypt data; it analyzes unencrypted and encrypted traffic."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following protocols is commonly used for secure web communication?",
+      "answers": {
+        "a": "HTTP",
+        "b": "FTP",
+        "c": "HTTPS",
+        "d": "SMTP"
+      },
+      "explanations": {
+        "a": "HTTP is used for web communication but is not secure by default.",
+        "b": "FTP is used for file transfer, not web communication, and is not secure.",
+        "c": "Correct. HTTPS is the secure version of HTTP, used for encrypted web communication.",
+        "d": "SMTP is used for email transmission, not for web communication."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What type of attack is typically characterized by sending a large number of SYN packets to a target without completing the handshake?",
+      "answers": {
+        "a": "ARP spoofing",
+        "b": "SQL injection",
+        "c": "SYN flood attack",
+        "d": "Man-in-the-middle attack"
+      },
+      "explanations": {
+        "a": "ARP spoofing is related to ARP protocol and not SYN packets.",
+        "b": "SQL injection targets databases, not network packets.",
+        "c": "Correct. A SYN flood attack involves sending numerous SYN packets to a target, overwhelming it by not completing the TCP handshake.",
+        "d": "A man-in-the-middle attack involves intercepting communication between two parties, not SYN flooding."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}

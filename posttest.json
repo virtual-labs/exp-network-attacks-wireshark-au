@@ -1,0 +1,56 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which Wireshark filter would you use to detect the presence of a SYN flood attack?",
+      "answers": {
+        "a": "http.request",
+        "b": "tcp.flags.syn == 1 and tcp.flags.ack == 0",
+        "c": "dns.qry.name == 'example.com'",
+        "d": "arp.opcode == 2"
+      },
+      "explanations": {
+        "a": "This filter is used to capture HTTP requests, not related to SYN flood detection.",
+        "b": "Correct. This filter helps in identifying packets where the SYN flag is set but the ACK flag is not, indicating a possible SYN flood attack.",
+        "c": "This filter is used to find DNS queries, not relevant for SYN flood detection.",
+        "d": "This filter is used to capture ARP replies, not related to SYN flood detection."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "How can ARP poisoning be detected in a pcap file using Wireshark?",
+      "answers": {
+        "a": "By filtering for packets where the ARP reply contains an unexpected MAC address.",
+        "b": "By analyzing DNS query responses.",
+        "c": "By looking for SYN packets without corresponding ACKs.",
+        "d": "By filtering for HTTP GET requests."
+      },
+      "explanations": {
+        "a": "Correct. ARP poisoning can be detected by looking for ARP replies with incorrect or unexpected MAC addresses.",
+        "b": "DNS queries are not directly related to ARP poisoning detection.",
+        "c": "This is more related to SYN flood detection, not ARP poisoning.",
+        "d": "HTTP GET requests are not related to ARP poisoning detection."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which type of attack might you be investigating if you filter for 'tcp.flags == 0x29' in Wireshark?",
+      "answers": {
+        "a": "SYN flood attack",
+        "b": "DNS spoofing",
+        "c": "Xmas scan",
+        "d": "Man-in-the-middle attack"
+      },
+      "explanations": {
+        "a": "SYN flood attacks typically involve SYN flags only.",
+        "b": "DNS spoofing would involve DNS-related traffic, not specific TCP flags.",
+        "c": "Correct. An Xmas scan sets the FIN, PSH, and URG flags (0x29 in hex) in the TCP header.",
+        "d": "While a man-in-the-middle attack might be detected through various anomalies, it is not specifically identified by this flag combination."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    }
+  ]
+}
