@@ -8,6 +8,7 @@ Wireshark is a powerful, open-source network protocol analyzer that captures and
 
 <u><h5>1. Packet Analysis</h5></u>
 <p>
+
 Wireshark allows users to open and analyze .pcap (packet capture) files, which contain recorded network traffic. By examining the headers and payloads of individual packets, users can identify abnormal behaviors, communication patterns, and potential security threats within the network.
 </p>
 
