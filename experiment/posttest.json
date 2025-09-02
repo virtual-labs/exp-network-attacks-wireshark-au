@@ -51,6 +51,57 @@
       },
       "correctAnswer": "c",
       "difficulty": "intermediate"
+    },
+    {
+      "question": "How can plaintext passwords be detected in Wireshark?",
+      "answers": {
+        "a": "By inspecting encrypted HTTPS packets",
+        "b": "By using filters like 'http.authbasic' or analyzing TCP streams of protocols without encryption",
+        "c": "By capturing ARP traffic",
+        "d": "By monitoring SYN packets only"
+      },
+      "explanations": {
+        "a": "Encrypted HTTPS traffic cannot reveal plaintext passwords directly.",
+        "b": "Correct. Protocols like HTTP, FTP, and Telnet can transmit credentials in plaintext, which can be detected using specific filters or TCP stream analysis.",
+        "c": "ARP traffic is unrelated to passwords.",
+        "d": "SYN packets are for TCP handshakes, not password detection."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What type of network anomalies can DNS analysis in Wireshark help detect?",
+      "answers": {
+        "a": "Port scanning using FIN packets",
+        "b": "DNS tunneling, spoofing, or data exfiltration",
+        "c": "SYN flood attacks",
+        "d": "ARP cache poisoning"
+      },
+      "explanations": {
+        "a": "FIN packets are used in Xmas or FIN scans, not DNS analysis.",
+        "b": "Correct. Monitoring DNS requests and responses can reveal unusual domain queries indicating tunneling, spoofing, or data exfiltration.",
+        "c": "SYN flood attacks are detected using TCP SYN flags, not DNS.",
+        "d": "ARP poisoning detection uses ARP filters, not DNS analysis."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why is network forensics important when using Wireshark?",
+      "answers": {
+        "a": "It prevents hardware failures",
+        "b": "It ensures faster internet speeds",
+        "c": "It helps identify attack patterns, prevent data breaches, and perform post-incident investigations",
+        "d": "It automatically blocks malware"
+      },
+      "explanations": {
+        "a": "Hardware failures are not prevented by network forensics.",
+        "b": "Network forensics does not affect internet speed.",
+        "c": "Correct. Continuous monitoring and packet analysis allow detection of attacks, prevention of data leaks, and thorough investigation after incidents.",
+        "d": "Wireshark does not block malware automatically; it is used for analysis."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
     }
   ]
 }
