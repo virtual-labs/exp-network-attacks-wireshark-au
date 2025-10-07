@@ -1,3 +1,3 @@
-### Aim of the Experiment
+
 To investigate and analyze network traffic using Wireshark by examining .pcap (packet capture) files in order to detect and understand various types of network attacks. This process helps in identifying attack patterns such as plaintext password leaks, DNS anomalies, SYN flood attacks, ARP poisoning, and Xmas scans.
 <p>This analysis is crucial in cybersecurity, network administration, and digital forensics. The ability to interpret network traffic and recognize attack signatures enables effective network security monitoring, intrusion detection, and incident response in real-world environments.</p>
