@@ -2,38 +2,106 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Which Wireshark filter would you use to detect the presence of a SYN flood attack?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "http.request",
+        "b": "tcp.flags.syn == 1 and tcp.flags.ack == 0",
+        "c": "dns.qry.name == 'example.com'",
+        "d": "arp.opcode == 2"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "This filter is used to capture HTTP requests, not related to SYN flood detection.",
+        "b": "Correct. This filter helps in identifying packets where the SYN flag is set but the ACK flag is not, indicating a possible SYN flood attack.",
+        "c": "This filter is used to find DNS queries, not relevant for SYN flood detection.",
+        "d": "This filter is used to capture ARP replies, not related to SYN flood detection."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "How can ARP poisoning be detected in a pcap file using Wireshark?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "By filtering for packets where the ARP reply contains an unexpected MAC address.",
+        "b": "By analyzing DNS query responses.",
+        "c": "By looking for SYN packets without corresponding ACKs.",
+        "d": "By filtering for HTTP GET requests."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct. ARP poisoning can be detected by looking for ARP replies with incorrect or unexpected MAC addresses.",
+        "b": "DNS queries are not directly related to ARP poisoning detection.",
+        "c": "This is more related to SYN flood detection, not ARP poisoning.",
+        "d": "HTTP GET requests are not related to ARP poisoning detection."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which type of attack might you be investigating if you filter for 'tcp.flags == 0x29' in Wireshark?",
+      "answers": {
+        "a": "SYN flood attack",
+        "b": "DNS spoofing",
+        "c": "Xmas scan",
+        "d": "Man-in-the-middle attack"
+      },
+      "explanations": {
+        "a": "SYN flood attacks typically involve SYN flags only.",
+        "b": "DNS spoofing would involve DNS-related traffic, not specific TCP flags.",
+        "c": "Correct. An Xmas scan sets the FIN, PSH, and URG flags (0x29 in hex) in the TCP header.",
+        "d": "While a man-in-the-middle attack might be detected through various anomalies, it is not specifically identified by this flag combination."
       },
       "correctAnswer": "c",
-      "difficulty": "beginner"
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "How can plaintext passwords be detected in Wireshark?",
+      "answers": {
+        "a": "By inspecting encrypted HTTPS packets",
+        "b": "By using filters like 'http.authbasic' or analyzing TCP streams of protocols without encryption",
+        "c": "By capturing ARP traffic",
+        "d": "By monitoring SYN packets only"
+      },
+      "explanations": {
+        "a": "Encrypted HTTPS traffic cannot reveal plaintext passwords directly.",
+        "b": "Correct. Protocols like HTTP, FTP, and Telnet can transmit credentials in plaintext, which can be detected using specific filters or TCP stream analysis.",
+        "c": "ARP traffic is unrelated to passwords.",
+        "d": "SYN packets are for TCP handshakes, not password detection."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What type of network anomalies can DNS analysis in Wireshark help detect?",
+      "answers": {
+        "a": "Port scanning using FIN packets",
+        "b": "DNS tunneling, spoofing, or data exfiltration",
+        "c": "SYN flood attacks",
+        "d": "ARP cache poisoning"
+      },
+      "explanations": {
+        "a": "FIN packets are used in Xmas or FIN scans, not DNS analysis.",
+        "b": "Correct. Monitoring DNS requests and responses can reveal unusual domain queries indicating tunneling, spoofing, or data exfiltration.",
+        "c": "SYN flood attacks are detected using TCP SYN flags, not DNS.",
+        "d": "ARP poisoning detection uses ARP filters, not DNS analysis."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why is network forensics important when using Wireshark?",
+      "answers": {
+        "a": "It prevents hardware failures",
+        "b": "It ensures faster internet speeds",
+        "c": "It helps identify attack patterns, prevent data breaches, and perform post-incident investigations",
+        "d": "It automatically blocks malware"
+      },
+      "explanations": {
+        "a": "Hardware failures are not prevented by network forensics.",
+        "b": "Network forensics does not affect internet speed.",
+        "c": "Correct. Continuous monitoring and packet analysis allow detection of attacks, prevention of data leaks, and thorough investigation after incidents.",
+        "d": "Wireshark does not block malware automatically; it is used for analysis."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
     }
   ]
 }
